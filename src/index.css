@@ -1,68 +1,71 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100dvw;
+  overflow-x: hidden;
+  color: hsl(0, 0%, 100%); /* Neutral 0 */
+  scroll-behavior: smooth;
+  font-family: "Inconsolata", monospace;
+  background-image: url('pattern-lines.svg');
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@theme {
+  --font-sans: "Inconsolata", monospace;
+  
+  /* Style Guide Colors */
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-neutral-300: hsl(252, 6%, 83%);
+  --color-neutral-500: hsl(245, 15%, 58%);
+  --color-neutral-700: hsl(245, 19%, 35%);
+  --color-neutral-900: hsl(248, 70%, 10%);
+  --color-orange-500: hsl(7, 88%, 67%);
+  --color-orange-700: hsl(7, 71%, 60%);
+  
+  /* Custom colors for backwards compatibility */
+  --color-white-50: hsl(252, 6%, 83%); /* Using Neutral 300 as white-50 replacement */
+  --color-blue-50: hsl(245, 15%, 58%); /* Using Neutral 500 as blue-50 replacement */
+  --color-blue-100: hsl(245, 19%, 35%); /* Using Neutral 700 as blue-100 replacement */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center flex-col text-center;
+  }
+  
+  /* Text gradient utility for the gradient specified in style guide */
+  .text-gradient {
+    background: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Font size utility based on style guide */
+  .text-label {
+    font-size: 20px;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer components {
+  form {
+    label {
+      @apply block text-neutral-300 mb-2;
+      font-size: 20px; /* Style guide font size for labels */
+    }
+    input,
+    textarea {
+      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-neutral-500 bg-neutral-700 text-neutral-0 rounded-md;
+    }
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.pattern-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/pattern-lines.svg');
+  background-size: auto;
+  pointer-events: none;
 }
