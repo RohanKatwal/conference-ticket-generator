@@ -5,7 +5,7 @@ const TicketForm = () => {
         <form action="">
             <div className=''>
                 <label className='text-left'>Upload Avatar</label>
-                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 cursor-pointer bg-neutral-700/20'>
+                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'>
                     <input
                     className='hidden'
                     type="file"
@@ -22,6 +22,27 @@ const TicketForm = () => {
                   <p className="text-neutral-300 text-xs">Drag and drop or click to upload</p>
                 </div>
             </div>
+            <div>
+              <label>Full Name</label>
+              <input type="text"
+              />
+            </div>
+            <div>
+              <label>Email Address</label>
+              <input type="email"
+              placeholder='example@email.com'
+              />
+            </div>
+            <div>
+              <label>Github Username</label>
+              <input type="text"
+              placeholder='@yourusername'
+              />
+            </div>
+            <button
+            className=''>
+              Generate My Ticket
+            </button>
 
         </form>
     </div>
