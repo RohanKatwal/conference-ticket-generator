@@ -11,15 +11,19 @@ const App = () => {
           lg:bg-[url('/images/background-desktop.png')]
           pattern-overlay"
       >
-        {/* Optional overlay */}
-        <div className="absolute inset-0/40 z-0" />
-
         <img 
         src="/images/pattern-squiggly-line-top.svg" alt="" 
         className="absolute top-0 right-0 w-48 sm:w-fit"
         />
 
-        {/* Squiggly line at bottom-left */}
+        <img 
+        src="/images/pattern-circle.svg" alt="" 
+          className="
+            absolute bottom-70 -right-15 w-30       
+            sm:bottom-70 sm:right-85 sm:w-auto     
+          "
+        />
+
         <img
           src="/images/pattern-squiggly-line-bottom-mobile-tablet.svg"
           alt=""

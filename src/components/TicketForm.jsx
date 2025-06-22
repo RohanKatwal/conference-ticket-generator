@@ -1,7 +1,7 @@
 import { Upload, AlertCircle, Github } from 'lucide-react';
 const TicketForm = () => {
   return (
-    <div className='max-w-md mx-auto'>
+    <div className='max-w-md mx-auto mb-10'>
         <form action="">
             <div className=''>
                 <label className='text-left'>Upload Avatar</label>
