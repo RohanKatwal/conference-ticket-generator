@@ -68,7 +68,7 @@ const TicketForm = () => {
 
     setIsSubmitting(true)
     try {
-      await new Promise((res) => setTimeout(res, 1000)) // Simulate API
+      await new Promise((res) => setTimeout(res, 1000)) 
       setCurrentView('success')
     } catch {
       setCurrentView('error')
@@ -81,7 +81,7 @@ const TicketForm = () => {
     <div className='max-w-md mx-auto mb-10'>
         <form action=""  onSubmit={handleSubmit}>
             <div className=''>
-                <label className='text-left'>Upload Avatar</label>
+              <label className='text-left'>Upload Avatar</label>
                 <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'>
                     <input
                     className='hidden'
@@ -102,16 +102,16 @@ const TicketForm = () => {
                 )}
                 </div>
                 {errors.avatar ? (
-  <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
-    <AlertCircle className="w-4 h-4" />
-    <span>{errors.avatar}</span>
-  </div>
-) : (
-  <div className='flex mt-3 gap-3'>
-    <img src="/images/icon-info.svg" alt="" />
-    <p className="text-neutral-300 text-xs">Drag and drop or click to upload</p>
-  </div>
-)}
+                  <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
+                    <AlertCircle className="w-4 h-4" />
+                    <span>{errors.avatar}</span>
+                  </div>
+                ) : (
+                  <div className='flex mt-3 gap-3'>
+                    <img src="/images/icon-info.svg" alt="" />
+                    <p className="text-neutral-300 text-xs">Drag and drop or click to upload</p>
+                  </div>
+                )}
 
             </div>
             <div>
@@ -120,7 +120,7 @@ const TicketForm = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleInputChange}
-    
+              className={`${errors.fullName ? 'border-red-400' : ''}`}
               />
               {errors.fullName && (
                 <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
@@ -136,6 +136,7 @@ const TicketForm = () => {
               placeholder='example@email.com'
               value={formData.email}
               onChange={handleInputChange}
+              className={`${errors.email ? 'border-red-400' : ''}`}
               />
               {errors.email && (
                 <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
@@ -150,6 +151,7 @@ const TicketForm = () => {
               placeholder='@yourusername'
               value={formData.githubUsername}
               onChange={handleInputChange}
+              className={`${errors.githubUsername ? 'border-red-400' : ''}`}
               />
                {errors.githubUsername && (
                 <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
