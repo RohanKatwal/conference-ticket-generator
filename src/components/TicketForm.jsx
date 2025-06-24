@@ -82,7 +82,12 @@ const TicketForm = () => {
         <form action=""  onSubmit={handleSubmit}>
             <div className=''>
               <label className='text-left'>Upload Avatar</label>
-                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'>
+                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'
+                 onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onClick={() => document.getElementById('avatar-upload').click()}
+                >
                     <input
                     className='hidden'
                     type="file"
@@ -133,6 +138,7 @@ const TicketForm = () => {
             <div>
               <label>Email Address</label>
               <input type="email"
+              name="email"
               placeholder='example@email.com'
               value={formData.email}
               onChange={handleInputChange}
@@ -149,6 +155,7 @@ const TicketForm = () => {
               <label>Github Username</label>
               <input type="text"
               placeholder='@yourusername'
+              name="githubUsername"
               value={formData.githubUsername}
               onChange={handleInputChange}
               className={`${errors.githubUsername ? 'border-red-400' : ''}`}
