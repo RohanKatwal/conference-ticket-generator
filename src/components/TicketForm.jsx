@@ -1,5 +1,7 @@
 import { Upload, AlertCircle, Github } from 'lucide-react';
 import { useState } from 'react';
+import SubHeading from './SubHeading';
+import TicketCard from './TicketCard';
 
 const TicketForm = () => {
   const [currentView, setCurrentView] = useState('form')
@@ -77,16 +79,37 @@ const TicketForm = () => {
     }
   }
 
+  if (currentView === 'success') {
+    return (
+      <TicketCard
+        fullName={formData.fullName}
+        email={formData.email}
+        githubUsername={formData.githubUsername}
+        avatar={avatar}
+      />
+    )
+  }
+
+  const resetForm = () => {
+    setCurrentView('form');
+    setFormData({ fullName: '', email: '', githubUsername: '' });
+    setAvatar(null);
+    setErrors({});
+  };
+
+
   return (
+    
     <div className='max-w-md mx-auto mb-10'>
+      <SubHeading/>
         <form action=""  onSubmit={handleSubmit}>
             <div className=''>
               <label className='text-left'>Upload Avatar</label>
                 <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'
-                 onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onClick={() => document.getElementById('avatar-upload').click()}
+                  onDrop={handleDrop}
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onClick={() => document.getElementById('avatar-upload').click()}
                 >
                     <input
                     className='hidden'
