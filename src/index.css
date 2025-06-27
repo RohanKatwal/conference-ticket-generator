@@ -47,6 +47,15 @@ body {
     font-size: 20px;
   }
 
+.ticket {
+  background-image: url('/images/pattern-ticket.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+
 }
 
 @layer components {
