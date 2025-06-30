@@ -1,4 +1,4 @@
-import { Upload, AlertCircle, Github } from 'lucide-react';
+import { Upload, AlertCircle, Github} from 'lucide-react';
 import { useState } from 'react';
 import SubHeading from './SubHeading';
 import TicketCard from './TicketCard';
@@ -47,6 +47,15 @@ const TicketForm = () => {
   const handleDragLeave = (e) => {
     e.preventDefault()
     setIsDragOver(false)
+  }
+
+  const removeAvatar = () => {
+    setAvatar(null)
+    setErrors((prev) => ({ ...prev, avatar: '' }))
+  }
+
+  const changeAvatar = () => {
+    document.getElementById('avatar-upload').click()
   }
 
   const validateForm = () => {
@@ -119,7 +128,31 @@ const TicketForm = () => {
                     onChange={handleFileSelect}
                     />
                     {avatar ? (
-                      <img src={avatar} alt="Preview" className="w-24 h-24 rounded-full object-cover" />
+                            <div className="flex flex-col items-center space-y-1">
+                              <img src={avatar} alt="Preview" className="w-15 h-15 rounded-md object-cover" />
+                              <div className="flex space-x-3">
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    removeAvatar();
+                                  }}
+                                  className="p-1 bg-neutral-700 hover:bg-orange-500 text-white text-xs rounded-sm transition-colors underline"
+                                >
+                                  <span>Remove image</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    changeAvatar();
+                                  }}
+                                  className="p-1 bg-neutral-700 hover:bg-blue-900 text-white text-xs rounded-sm transition-colors"
+                                >
+                                  <span>Change image</span>
+                                </button>
+                              </div>
+                            </div>
                         ) : (
                           <>
                         <img
