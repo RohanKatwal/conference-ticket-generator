@@ -114,7 +114,7 @@ const TicketForm = () => {
         <form action=""  onSubmit={handleSubmit}>
             <div className=''>
               <label className='text-left'>Upload Avatar</label>
-                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20'
+                <div className='flex-center border-1 border-dashed border-neutral-400 rounded-lg border-spacing-10 p-8 sm:pd-4 cursor-pointer bg-neutral-700/20 hover:bg-neutral-700'
                   onDrop={handleDrop}
                   onDragOver={handleDragOver}
                   onDragLeave={handleDragLeave}
@@ -170,7 +170,7 @@ const TicketForm = () => {
                 ) : (
                   <div className='flex mt-3 gap-3'>
                     <img src="/images/icon-info.svg" alt="" />
-                    <p className="text-neutral-300 text-xs">Drag and drop or click to upload</p>
+                    <p className="text-neutral-300 text-xs">Upload your photo (JPG or PNG, max size: 5MB).</p>
                   </div>
                 )}
 
@@ -181,7 +181,7 @@ const TicketForm = () => {
               name="fullName"
               value={formData.fullName}
               onChange={handleInputChange}
-              className={`${errors.fullName ? 'border-red-400' : ''}`}
+              className={`${errors.fullName ? 'border-red-400' : ''} `}
               />
               {errors.fullName && (
                 <div className="flex items-center gap-2 mt-3 text-xs text-red-400">
