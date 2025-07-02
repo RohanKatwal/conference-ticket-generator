@@ -157,7 +157,7 @@ const TicketForm = () => {
                           <>
                         <img
                         className='mb-3 w-10 h-10 rounded-lg border-1 border-neutral-600 bg-neutral-800 p-1.5'
-                        src="/images/icon-upload.svg" alt="" />
+                        src="./images/icon-upload.svg" alt="" />
                         <p className="text-neutral-300">Drag and drop or click to upload</p>
                         </>
                 )}
@@ -169,7 +169,7 @@ const TicketForm = () => {
                   </div>
                 ) : (
                   <div className='flex mt-3 gap-3'>
-                    <img src="/images/icon-info.svg" alt="" />
+                    <img src="./images/icon-info.svg" alt="" />
                     <p className="text-neutral-300 text-xs">Upload your photo (JPG or PNG, max size: 5MB).</p>
                   </div>
                 )}

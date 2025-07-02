@@ -12,12 +12,12 @@ const App = () => {
           pattern-overlay"
       >
         <img 
-        src="/images/pattern-squiggly-line-top.svg" alt="" 
+        src="./images/pattern-squiggly-line-top.svg" alt="" 
         className="absolute top-0 right-0 w-48 sm:w-fit"
         />
 
         <img 
-        src="/images/pattern-circle.svg" alt="" 
+        src="./images/pattern-circle.svg" alt="" 
           className="
             absolute bottom-70 -right-15 w-30       
             sm:bottom-70 sm:right-85 sm:w-auto     
@@ -25,12 +25,12 @@ const App = () => {
         />
 
         <img
-          src="/images/pattern-squiggly-line-bottom-mobile-tablet.svg"
+          src="./images/pattern-squiggly-line-bottom-mobile-tablet.svg"
           alt=""
           className="absolute bottom-0 left-0 w-70 lg:hidden z-0"
         />
         <img
-          src="/images/pattern-squiggly-line-bottom-desktop.svg"
+          src="./images/pattern-squiggly-line-bottom-desktop.svg"
           alt=""
           className="absolute bottom-0 left-0 w-fit hidden lg:block z-0"
         />

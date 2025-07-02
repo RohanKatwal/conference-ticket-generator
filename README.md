@@ -5,7 +5,7 @@ A modern, responsive conference ticket generator built with React that allows us
 
 ## 🚀 Live Demo
 
-- **Live Site**: [View Demo]()
+- **Live Site**: [View Demo](https://rohankatwal.github.io/conference-ticket-generator/)
 - **Portfolio**: [rohankatwal.com.np](https://www.rohankatwal.com.np/)
 
 ## 📋 Overview

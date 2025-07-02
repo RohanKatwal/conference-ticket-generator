@@ -14,7 +14,7 @@ export default function TicketCard({ fullName, email, githubUsername, avatar }) 
           mt-6 md:pr-4 rounded-xl w-full max-w-md flex items-center justify-between">
         <div className="p-6 flex flex-col items-start gap-8 md:gap-10">
           <div className="flex flex-col gap-2 text-right mt-2 md:mt-0">
-            <img src="/images/logo-full.svg" alt="" className="w-40 md:w-50" />
+            <img src="./images/logo-full.svg" alt="" className="w-40 md:w-50" />
             <p className="text-neutral-400 text-sm pl-4 md:pl-9">Jan 31, 2025 / Austin, TX</p>
           </div>
           <div className="flex gap-2">
@@ -26,7 +26,7 @@ export default function TicketCard({ fullName, email, githubUsername, avatar }) 
           <div className="text-left align-bottom">
             <h2 className="text-lg font-medium">{fullName}</h2>
             <div className="flex justify gap-1 items-end">
-            <img src="/images/icon-github.svg" alt="" />
+            <img src="./images/icon-github.svg" alt="" />
             <p className="text-sm text-neutral-400">@{githubUsername}</p>
             </div>
           </div>
